@@ -1,0 +1,99 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --font-color-grey: #999;
+    --font-color-drk-grey: #555;
+}
+
+html 
+{
+    background: #0f0e16;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
+}
+
+.logo
+{
+    border: 2px solid white;
+    top: 0;
+    position: fixed;
+    background: linear-gradient(#000, #999);
+    background: -webkit-linear-gradient(#000, #999);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    margin: 1.5rem;
+    padding: 0.1rem 0.6rem;
+    border-radius: 50%;
+    border-color: var(--font-color-drk-grey);
+}
+.webgl
+{
+    /*position: fixed; */
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+.change
+{
+    transition: 1s ease;
+    width: 100vw;
+    height: 84vh;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 5rem;
+    z-index: 100;
+    background-color: #000;
+    opacity: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: block;
+}
+
+/* Email on bottom right of landing page */
+.vert-email 
+{
+    margin: 1rem;
+    bottom: -3rem;
+    right: 0;
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: var(--font-color-grey);
+}
+.vert-email a:hover
+{
+    color: #FFFF00;
+}
+
+.vert-email a
+{
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--font-color-grey);
+}
+
+.vert-email a span
+{
+    padding: 1.5rem 0;
+}
+
+
+.svg-icons svg
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 1rem;
+}
