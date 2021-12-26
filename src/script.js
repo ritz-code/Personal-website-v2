@@ -26,7 +26,7 @@ context.fillText("Text", 20, 20); */
 /**
  * Debug
  */
-const gui = new dat.GUI()
+/*const gui = new dat.GUI()
 //#050506
 const parameters = {
     materialColor: '#050506',
@@ -44,7 +44,7 @@ gui
     .addColor(parameters, 'backgroundColor')
     .onChange(() => {
         scene.background = new THREE.Color(parameters.backgroundColor)
-    })
+    })*/
 
 const createCarPos = true
 const uSpeed = 0.001
@@ -52,14 +52,14 @@ const uSpeed = 0.001
 //FOG background
 var setColor = 0xF02050
 
-scene.background = new THREE.Color(parameters.backgroundColor)
-scene.fog = new THREE.Fog(parameters.backgroundColor, 2, 17)
+scene.background = new THREE.Color('#0f0e16')
+scene.fog = new THREE.Fog('#0f0e16', 2, 17)
 
 // Cube Design
 
 const geometry = new THREE.IcosahedronGeometry(0.3)
 const material = new THREE.MeshLambertMaterial({
-    color: parameters.materialColor,
+    color: '#050506',
     //opacity: 0.03,
     side: THREE.DoubleSide
 })
