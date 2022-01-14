@@ -1,66 +1,32 @@
 import './style.css'
 import * as THREE from 'three'
-import * as dat from 'lil-gui'
-import gsap from 'gsap'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
-/**
-* Base
-*/
-// Canvas
+
+/* Canvas for ThreeJS */
 const canvas = document.querySelector('canvas.webgl')
 
-// Scene
+/* Scene */
 const scene = new THREE.Scene()
 const city = new THREE.Object3D()
 const smoke = new THREE.Object3D()
 const cubesAll = new THREE.Object3D()
 scene.add(cubesAll)
 
-//Logo
-/*var context = canvas.getContext("2d");
-context.fillStyle = "white";
-context.font = "bold 18px Arial";
-context.fillText("Text", 20, 20); */
-
-/**
- * Debug
- */
-/*const gui = new dat.GUI()
-//#050506
-const parameters = {
-    materialColor: '#050506',
-    backgroundColor: '#0f0e16'
-}
-
-gui
-    .addColor(parameters, 'materialColor')
-    .onChange(() => {
-        material.color.set(parameters.materialColor)
-        //scene.background = new THREE.Color(parameters.backgroundColor)
-    })
-
-gui
-    .addColor(parameters, 'backgroundColor')
-    .onChange(() => {
-        scene.background = new THREE.Color(parameters.backgroundColor)
-    })*/
 
 const createCarPos = true
 const uSpeed = 0.001
 
-//FOG background
-var setColor = 0xF02050
-
+/*FOG background */
 scene.background = new THREE.Color('#0f0e16')
 scene.fog = new THREE.Fog('#0f0e16', 2, 17)
 
-// Cube Design
 
+/* Cube Geometry, Material and Design */
 const geometry = new THREE.IcosahedronGeometry(0.3)
 const material = new THREE.MeshLambertMaterial({
-    color: '#050506',
-    //opacity: 0.03,
+    color: '#27273e',
+    opacity: 0.1,
     side: THREE.DoubleSide
 })
 
@@ -75,11 +41,8 @@ for (var i = 1; i < 18; i++) {
     cube.castShadow = true
     cube.receiveShadow = true
 
-    //floor.scale.y = 0.05
-
-    const cubeWidth = 0.5
     var s = .1 + Math.random()
-    //cube.scale.set(Math.random() * )
+
     cube.position.x = (Math.random() - 0.5) * 2
     cube.position.y = (Math.random() - 0.5) * 2
     cube.position.z = (Math.random() - 0.5) * 2
@@ -93,7 +56,6 @@ for (var i = 1; i < 18; i++) {
 //Particular
 var gmaterial = new THREE.MeshToonMaterial({ color: 0xFFFF00, side: THREE.DoubleSide });
 var gparticular = new THREE.CircleGeometry(0.0075, 3);
-var aparticular = 5;
 
 for (var h = 1; h < 300; h++) {
     var particular = new THREE.Mesh(gparticular, gmaterial);
@@ -104,14 +66,14 @@ for (var h = 1; h < 300; h++) {
 
 scene.add(smoke)
 
-/**
- * Sizes
- */
+
+/* Sizes for window width and height */
 const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
 }
 
+/* Window resize */
 window.addEventListener('resize', () => {
     // Update sizes
     sizes.width = window.innerWidth
@@ -126,16 +88,14 @@ window.addEventListener('resize', () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-// Base camera
+/* Base camera */
 const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100)
-camera.position.z = 15
+camera.position.z = 11
 scene.add(camera)
 
-/*
-* Lights
-*/
-var ambientLight = new THREE.AmbientLight(0xFFFFFF, 10)
-var lightFront = new THREE.SpotLight(0xFFFFFF, 30, 10, 90)
+/* Lights */
+var ambientLight = new THREE.AmbientLight(0xFFFFFF, 1)
+var lightFront = new THREE.SpotLight(0xFFFFFF, 20, 10, 50)
 var lightBack = new THREE.PointLight(0xFFFFFF, 0.5)
 
 lightFront.rotation.x = 45 * Math.PI / 180
@@ -155,24 +115,21 @@ const clock = new THREE.Clock()
 let previousTime = 0
 
 
-//Grid helper
+/* Grid helper */
 var gridHelper = new THREE.GridHelper(60, 120, 0x999999, 0x999999);
 gridHelper.position.z = -9
 gridHelper.rotation.x = 45 * Math.PI / 180
 scene.add(gridHelper)
 
-/**
-* Renderer
-*/
+/* Renderer */
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
-    //to make the background transparent from initial black
     antialias: true
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-//Orbit Control
+/* Orbit Control */
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 
@@ -183,11 +140,10 @@ const animate = () => {
     previousTime = elapsedTime
 
     if (camera.position.z >= 7) {
-        //camera.position.z = 10
         camera.position.z -= elapsedTime / 1000
     }
 
-    // Render
+    /* Render */
     renderer.render(scene, camera)
     controls.update()
 
@@ -195,9 +151,7 @@ const animate = () => {
     smoke.rotation.x += 0.005;
 
     cubesAll.rotation.x += 0.005;
-    //cubesAll.rotation.z += 0.005;
 
-    // Call tick again on the next frame
     window.requestAnimationFrame(animate)
 }
 animate()

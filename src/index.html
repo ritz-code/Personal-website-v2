@@ -4,135 +4,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>21 - Scroll base animation</title>
+    <meta name="description" content="Ritu Rawat's personal and professional page. Know more about me and my projects.">
+    <title>Ritu Rawat</title>
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
 </head>
 
 <body>
-    <canvas class="webgl"></canvas>
-    <h2 class="logo">R</h2>
-    <main class="main">
-        <section id="intro" class="section-container">
-            <div class="intro-flexbox section-container-2">
-                <div class="intro-container section-container-3">
-                    <span>
-                        <small>Hi, my name is&nbsp;</small>
-                    </span>
-                    <h1>
-                        <span>Ritu Rawat.</span>
-                    </h1>
+    <script>
+        /* Function for toggling the hamburger menu */
+        function onClickMenu() {
+            document.getElementById("menu").classList.toggle("icon");
+            document.getElementById("nav-list").classList.toggle("change");
+        }
+    </script>
+    <div id="page">
 
-                    <small>I am a web developer creating experiences that soothe and delight.</small>
-                </div>
-            </div>
-        </section>
-        <section id="about" class="section-container">
-            <div class="about-container section-container-2">
-                <div class="about-main section-container-3">
-                    <h1>
-                        <span>I'm many&nbsp;</span>
-                    </h1>
-                    <h1>
-                        <span>things.</span>
-                    </h1>
-                </div>
-                <div class="about-attributes">
-                <div class="about-list-1 about-list">
-                    <small>#human</small>
-                    <small>#sister</small>
-                    <small>#artist</small>
-                    <small>#avidreader</small>
-                    <small>#traveler</small>
-                </div>
-                <div class="about-list-2 about-list">
-                    <small>#coder</small>
-                    <small>#fastlearner</small>
-                    <small>#webdeveloper</small>
-                    <small>#teamplayer</small>
-                    <small>#goodlistener</small>
-                </div>
-                <div class="about-list-3 about-list">
-                    <small>#yogi</small>
-                    <small>#foodie</small>
-                    <small>#dogmom</small>
-                    <small>#beachlover</small>
-                    <small>#designenthusiast</small>
-                </div>
-            </div>
-            </div>
-        </section>
-        <section id="projects">
-            <ul>
-                <li>
-                    <div class="project-content"></div>
-                    <div class="project-image">
-                        <a href="#"></a>
+        <!--Canvas for Threejs-->
+        <canvas class="webgl"></canvas>
+        <h2 class="logo"><a href="#intro">R</a></h2>
+        <main class="main">
+
+            <!--Landing Page-->
+            <section id="intro" class="section-container">
+                <div class="intro-flexbox section-container-2">
+                    <div class="intro-container section-container-3">
+                        <small>Hi, my <span class="hello">name</span> is&nbsp;</small>
+                        </span>
+                        <h1>
+                            <span>Ritu Rawat.</span>
+                        </h1>
+
+                        <small>I am a web developer creating experiences that soothe and
+                            delight.</small>
+                        <div class="contact-me">
+                            <a href="mailto:ritu.sarma29@gmail.com">Say Hello!</a>
+                        </div>
                     </div>
+                </div>
+            </section>
+
+            <!--About Me Section-->
+            <section id="about" class="section-container">
+                <h2 class="heading">About Me</h2>
+                <div class="about-flexbox">
+                    <div class="about-container section-container-2">
+                        <div class="about-main section-container-3">
+                            <p>I'm Ritu, a website developer, artist and former sales manager, based in Atlanta,
+                                Georgia.
+                            </p>
+                            <p>I enjoy creating things that live on the internet. With my prior experiences as a Testing
+                                Engineer, Art Teacher and Sales Professional, I bring my vast range of experience in
+                                software, art, design, and the demands of the market to my work as a web developer and
+                                designer. Creating things makes me happy, and nothing
+                                happier than creating a beautiful web aesthetic which hopefully reaches a multitude of
+                                people.</p>
+                            <p>Here are a few technologies I am working on right now:</p>
+                        </div>
+                        <ul class="about-skills">
+                            <li>JavaScript</li>
+                            <li>ReactJS</li>
+                            <li>ThreeJS</li>
+                            <li>Node.js</li>
+                            <li>NextJS</li>
+                            <li>GIT</li>
+                            <li>CSS</li>
+                            <li>Blender</li>
+                        </ul>
+                    </div>
+                    <div class="about-pic">
+                        <div class="wrapper">
+                            <img alt="Ritu's pic while hiking" src="../img/ritu.jpg">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--Projects Details Section-->
+            <section id="projects">
+                <h2 class="heading">Some Things I've Built</h2>
+                <ul class="project-list">
+                    <li class="project-list-item">
+                        <div class="project-content margin-container top-div project-div">
+                            <p class="project-overline">Featured Project</p>
+                            <h3 class="project-title"><a href="https://femmejolie.vercel.app/">Femme-Jolie Website</a>
+                            </h3>
+
+                            <div class="project-description">
+                                <p>
+                                    An ecommerce website for visualizing a retail store. Includes fully functional
+                                    product page, payment authorization, cart orders and credit
+                                    card payments.
+                                </p>
+                                <p>
+                                    The project increased my understanding of the backend significantly. In addition, I
+                                    also learned the front end workings of NextJs.
+                                </p>
+                            </div>
+                            <ul class="project-tech-list right">
+                                <li>NextJS</li>
+                                <li>CSS</li>
+                                <li>MongoDB</li>
+                                <li>Stripe</li>
+                            </ul>
+                            <ul class="project-link-to">
+                                <li><a href="https://github.com/ritz-code/Femme-Jolie-ecommerce">
+                                        <i class="fab fa-github"></i>
+                                    </a></li>
+                                <li><a href="https://femmejolie.vercel.app">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a></li>
+                            </ul>
+                        </div>
+                        <div class="project-image margin-container bottom-div project-div">
+                            <a href="https://femmejolie.vercel.app">
+                                <div class="project-image-container">
+                                    <img alt="Femme-Jolie ecommerce webpage" src="../img/femme-jolie.png">
+                                </div>
+                            </a>
+                        </div>
+
+                    </li>
+                    <li class="project-list-item">
+                        <div class="project-content margin-container top-div project-div">
+                            <div>
+                                <p class="project-overline">Featured Project</p>
+                                <h3 class="project-title"><a href="https://github.com/ritz-code/React-blog">React
+                                        blog</a></h3>
+                                <div class="project-description">
+                                    <p>
+                                        I believe that the best way to learn a new library or <tm1-ui-dbr-image
+                                            tm1-instance="Instance Name" tm1-cube="Cube Name"
+                                            tm1-elements='Comma separated element list' ng-model="model">
+                                        </tm1-ui-dbr-image> is to implement it simultaneously while learning.
+                                    </p>
+                                    <p>
+                                        The plan is to keep adding my notes to the blog as I progress. Learned a lot
+                                        about JWT, hooks and React routing while working on this project.
+                                    </p>
+                                </div>
+                                <ul class="project-tech-list">
+                                    <li>ReactJS</li>
+                                    <li>NodeJS</li>
+                                    <li>MySQL</li>
+                                    <li>JWT</li>
+                                </ul>
+                                <ul class="project-link-to">
+                                    <li><a href="https://github.com/ritz-code/React-blog">
+                                            <i class="fab fa-github"></i>
+                                        </a></li>
+                                    <li><a href="https://github.com/ritz-code/React-blog">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-image margin-container bottom-div project-div">
+                            <a href="https://github.com/ritz-code/React-blog">
+                                <div class="project-image-container">
+                                    <img alt="React blog webpage" src="../img/react-blog.png">
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="project-list-item">
+                        <div class="project-content margin-container top-div project-div">
+                            <div>
+                                <p class="project-overline">Featured Project</p>
+                                <h3 class="project-title"><a
+                                        href="https://ritz-code.github.io/riturawat.github.io">Personal Website
+                                        v1.0</a></h3>
+                                <div class="project-description">
+                                    <p>
+                                        The first version of my personal portfolio. It was exciting to put all the
+                                        pieces of what I had learned into one solid whole; just like putting together
+                                        pieces of a puzzle.
+                                    </p>
+                                </div>
+                                <ul class="project-tech-list right">
+                                    <li>JavaScript</li>
+                                    <li>CSS</li>
+                                    <li>HTML</li>
+                                </ul>
+                                <ul class="project-link-to">
+                                    <li><a href="https://github.com/ritz-code/Personal-website-v2">
+                                            <i class="fab fa-github"></i>
+                                        </a></li>
+                                    <li><a href="https://ritz-code.github.io/riturawat.github.io">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="project-image margin-container bottom-div project-div">
+                            <a href="https://ritz-code.github.io/riturawat.github.io">
+                                <div class="project-image-container">
+                                    <img alt="old website front page" src="../img/website.png">
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="projects-logo"><img src="../img/favicon.png"></div>
+            </section>
+
+            <!--Contact details section-->
+            <section id="contact">
+                <div class="contact-container">
+                    <h2 class="contact-heading">Get In Touch</h2>
+                    <p>Living, learning, & leveling </p>
+                    <p> up one day at a time.</p>
+                    <div class="hire-me"><a href="https://www.linkedin.com/in/ritu-rawat-6ba05533/">Hire Me!</a></div>
+                    <div class="social-list">
+
+                        <span class="socials-link">
+                            <a href="https://github.com/ritz-code">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </span>
+
+                        <span class="socials-link">
+                            <a href="https://www.linkedin.com/in/ritu-rawat-6ba05533/">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </span>
+
+                        <span class="socials-link">
+                            <a href="mailto:ritu.sarma29@gmail.com">
+                                <i class="fas fa-at"></i>
+                            </a>
+                        </span>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>Designed & Built with Three.js by <span>Ritu Rawat.</span></p>
+            </footer>
+        </main>
+
+        <!-- Nav bar -->
+        <nav id="navbar" onclick="onClickMenu()">
+            <div id="menu">
+                <div id="bar1" class="bar"></div>
+                <div id="bar2" class="bar"></div>
+                <div id="bar3" class="bar"></div>
+            </div>
+            <ul id="nav-list">
+
+                <li class="nav-item">
+                    <a href="#intro">Home</a>
                 </li>
-                <li>
-                    <div class="project-content"></div>
-                    <div class="project-image">
-                        <a href="#"></a>
-                    </div>
+
+                <li class="nav-item">
+                    <a href="#about">About</a>
                 </li>
-                <li>
-                    <div class="project-content"></div>
-                    <div class="project-image">
-                        <a href="#"></a>
-                    </div>
+
+                <li class="nav-item">
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
-        </section>
-    </main>
-    <!-- Nav bar -->
-    <nav id="navbar">
-        <ul class="nav-list">
-
-            <li class="nav-item">
-                <a href="#about">About</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#skills">Skills</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#projects">Projects</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="social-list">
-        <span class="socials-link">
-            <a href="https://github.com/ritz-code" class="social-list-link">
-                <i class="fab fa-github"></i>
-            </a>
-        </span>
-
-        <span class="socials-link">
-            <a href="https://www.linkedin.com/in/ritu-rawat-6ba05533/" class="social-list-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </span>
-
-        <span class="socials-link">
-            <a href="img/Ritu_Rawat.pdf" class="social-list-link">
-                <i class="fas fa-file"></i>
-            </a>
-        </span>
-
-        <span>______________</span>
-    </div>
-    <div class="vert-email">
-        <a href="#">ritu.sarma29@gmail.com<span>_____________</span></a>
+        </nav>
     </div>
 </body>
 
